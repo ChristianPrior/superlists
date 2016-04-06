@@ -27,10 +27,10 @@ eg, on ubuntu:
 ## Folder Structure:
 Assume we have a user (eg chris) account at /home/chris
 
-/home/chris
-    sites
-        SITENAME
-            database
-            source
-            static
-            virtualenv
+* /home/chris
+  * sites
+    * SITENAME
+      * database
+      * source
+      * static
+      * virtualenv
