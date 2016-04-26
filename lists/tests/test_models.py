@@ -3,7 +3,6 @@ from django.core.exceptions import ValidationError
 
 from lists.models import Item, List
 
-
 class ItemModelTest(TestCase):
 
 	def test_default_text(self):
