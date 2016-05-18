@@ -13,21 +13,31 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Item',
             fields=[
-                ('id', models.AutoField(verbose_name='ID', primary_key=True, auto_created=True, serialize=False)),
+                ('id', models.AutoField(primary_key=True, auto_created=True, verbose_name='ID', serialize=False)),
                 ('text', models.TextField(default='')),
-                ('list', models.TextField(default='')),
             ],
             options={
+                'ordering': ('id',),
             },
             bases=(models.Model,),
         ),
         migrations.CreateModel(
             name='List',
             fields=[
-                ('id', models.AutoField(verbose_name='ID', primary_key=True, auto_created=True, serialize=False)),
+                ('id', models.AutoField(primary_key=True, auto_created=True, verbose_name='ID', serialize=False)),
             ],
             options={
             },
             bases=(models.Model,),
+        ),
+        migrations.AddField(
+            model_name='item',
+            name='list',
+            field=models.ForeignKey(default=None, to='lists.List'),
+            preserve_default=True,
+        ),
+        migrations.AlterUniqueTogether(
+            name='item',
+            unique_together=set([('list', 'text')]),
         ),
     ]
