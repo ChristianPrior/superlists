@@ -19,7 +19,7 @@ def reset_database():
 
 
 def create_session_on_server(email):
-	session_key = run('{manage.py} create_session {email}'.format(
+	session_key = run('{manage_py} create_session {email}'.format(
 		manage_py=_get_manage_dot_py(env.host),
 		email=email,
 	))
