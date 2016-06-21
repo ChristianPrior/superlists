@@ -55,10 +55,13 @@ class FunctionalTest(StaticLiveServerTestCase):
 
 
 	def _test_has_failed(self):
-		for method, error in self._outcome.errors:
-			if error:
-				return True
-		return False
+		try:
+			for method, error in self._outcome.errors:
+				if error:
+					return True
+			return False
+		except:
+			return not self._outcomeForDoCleanups.success
 
 
 	def take_screenshot(self):
