@@ -11,7 +11,7 @@
 <body>
 <div class="container">
 
-    <nav class="navbar navbar-default" role="navigation">
+    <nav class="navbar navbar-default title" role="navigation">
         <a class="navbar-brand" href="/">Superlists</a>
         {% if user.email %}
         	<ul class="nav navbar-nav">
@@ -25,7 +25,7 @@
     </nav>
 
 	<div class="row">
-		<div class="col-md-6 col-md-offset-3 jumbotron">
+		<div class="col-md-6 col-md-offset-3 jumbotron title">
 			<div class="text-center">
 				<h1>{% block header_text %}{% endblock %}</h1>
 
